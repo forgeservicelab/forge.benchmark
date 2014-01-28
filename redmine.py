@@ -55,11 +55,6 @@ def getPassword(user):
 
 
 def getAuthenticatedHandle(baseurl, cookiejar, user, password, debug=False):
-    """
-    returns mechanize browser instance that
-    Tested on CASino and standard Redmine login
-    """
-
     br = mechanize.Browser()
 
     if debug:
