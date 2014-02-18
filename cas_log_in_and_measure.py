@@ -27,7 +27,7 @@ logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.DEBUG)
 
 
-DESCRIPTION = "FORGE Redmine benchmark"
+DESCRIPTION = "FORGE benchmark for services behind CAS"
 REDMINE_URL = 'https://support.forgeservicelab.fi/redmine'
 
 MEASURED_URLS = ['/rb/taskboards/50',
@@ -101,8 +101,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(DESCRIPTION,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     help_count = 'how many times to measure timeout for each url'
-    help_baseurl = 'base url, e.g. https://support.forgeservicelab.fi'
-    help_locations = 'locations to measure. full url is baseurl + locations'
+    help_baseurl = 'base url, e.g. https://auth.forgeservicelab.fi'
+    help_locations = ('locations to measure. full url is baseurl + locations. '
+                      ' e.g. /sessions')
 
     parser.add_argument('-d','--debug', help='show debug output',
                         action='store_true')
